@@ -1,0 +1,16 @@
+AllCops:
+  TargetRubyVersion: 2.2.2
+  RunRailsCops: true
+
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+
+Metrics/LineLength:
+  Enabled: false
+
+Documentation:
+    Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact

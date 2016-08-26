@@ -1,0 +1,7 @@
+<h1>Payments</h1>
+<ol>   
+<% @payments.each do |payment| %>
+<li><%= link_to payment.id, {:controller => "payment", 
+			:action => "show", :payment_id => payment.id }%> | <%= payment %></li>   
+<% end %>
+</ol> 

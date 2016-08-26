@@ -1,0 +1,25 @@
+<h3>Mensajes de <%= @user.email %></h3>
+
+  <% if @messages.nil? %>
+    <p>No hay mensajes</p>
+  <% elsif @messages.size < 1 %>
+    <p>No hay mensajes</p>
+  <% else %>
+    <% @messages.each do |d| %>
+      <% unless d.id.nil? %>
+        <%= render :partial => "chat_message", :locals => {:d => d} %>
+      <% end %> 
+    <% end %>
+  <% end %>
+
+<%= render 'form' %>
+
+<!-- script type="text/javascript">
+  var ready = function() {
+    $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+  };
+
+  $(document).ready(ready);
+  $(document).on('page:load', ready);
+</script -->
+

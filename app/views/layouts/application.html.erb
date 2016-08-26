@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= meta_description %>">
+  <meta name="author" content="<%= meta_author %>">
+  <meta name="Keywords" content="<%= meta_keywords %>">
+
+  <title><%= full_title(yield(:title)) %></title>
+
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  
+  <a href="#Top"></a>
+</head>
+
+<body>
+  <div id="wrapper">
+  <%= render 'layouts/navigation_bar'%>
+  <% if admin_signed_in? %>
+    <%= render 'layouts/navigation_side'%>
+    <div id="page-wrapper">
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
+      <%= yield %>
+    </div>
+  <% else %>
+    <div id="page-wrapper">
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
+      <%= yield %>
+    </div>
+  <% end %>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+  </div>
+  </body>
+</html>

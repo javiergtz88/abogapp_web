@@ -1,0 +1,23 @@
+<h3>Mensajes Todos</h3>
+<%= link_to 'Mostrar mensajes pendientes',  mensajes_path %>
+
+<table class="table">
+  <thead>
+    <th>Usuario</th>
+    <th>Mensajes no leidos</th>
+    <th>Mas reciente</th>
+    <th>Total</th>
+  </thead>
+  <tbody>
+  <% @arreglo_usuarios.each do |d| %>
+    <tr>
+      <td><%= link_to d[:email], {:controller => "messages", :action => "show", 
+              usuario_id: d[:usuario_id] }%></td>
+      <td><%= d[:mensaje][:no_leidos] %></td>
+      <td><%= (d[:mensaje][:mas_reciente].strftime("%m/%d/%Y @ %I:%M%p") if d[:mensaje][:mas_reciente]) || "null" %></td>
+      <td><%= d[:mensaje][:total] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

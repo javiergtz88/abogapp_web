@@ -1,0 +1,1 @@
+ErrorDocument 500 "Rails application failed to start properly"

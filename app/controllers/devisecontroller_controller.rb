@@ -1,0 +1,2 @@
+class DevisecontrollerController < ApplicationController
+end

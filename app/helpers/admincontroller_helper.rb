@@ -1,0 +1,2 @@
+module AdmincontrollerHelper
+end

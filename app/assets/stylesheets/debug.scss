@@ -1,0 +1,32 @@
+@mixin box_sizing { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* miscellaneous */
+.debug_dump {
+clear: both;
+float: left;
+width: 100%; margin-top: 45px; @include box_sizing;
+}
+
+/* Footer */
+#footer-new{
+	color: #898989;
+	padding-bottom: 100px;
+	background-color: #f8f8f8;
+    border-top: solid 5px  #F7945F;
+}
+
+#footer-new a{
+	color: #898989;
+}
+
+#footer-new h4{
+	color: #545454;
+}
+
+#bottom-logo-block{
+	text-align: center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+}

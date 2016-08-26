@@ -1,0 +1,2 @@
+module RegistrationscontrollerHelper
+end
